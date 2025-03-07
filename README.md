@@ -1,6 +1,6 @@
 # XSStrike
 
-A reflected XSS Tester for interactive forms - The program automates testing for reflected XSS vulnerabilities by injecting various XSS payloads into a web application, automatically filling and submitting forms, and verifying whether the attack was successful by detecting alert() pop-ups or reflected code in the webpage.  
+A **reflected XSS Tester for interactive forms** - The program automates testing for reflected XSS vulnerabilities by injecting various XSS payloads into a web application, automatically filling and submitting forms, and verifying whether the attack was successful by detecting alert() pop-ups or reflected code in the webpage.  
 
 The program was created as part of my training at the Developer Academy and is used exclusively for teaching purposes.  
 
@@ -25,19 +25,19 @@ The following table shows which functions **XSStrike** supports:
 
 | Flag | Description | Required |
 | ---- | ----------- | -------- |
-| -h <br> --help | Get a list of the available options | no |
-| -u <br> --url | URL of the page containing the input form | yes |
-| -l <br> --level | Level to be entered in the form | yes |
-| -l_f <br> --level_field | Name of the input field for the level | yes |
-| -p_f <br> --payload_field | Name of the input field for the payload | yes |
-| -b <br> --button | Class_Name of the submit button | yes |
-| -w <br> --wordlist | Path to the file containing XSS payloads | yes |
-| -s <br> --sink | CSS selector of the element where the reflection should be checked | no |
-| --headless | Runs the browser in headless mode | no |
+| -h <br> --help | Get a list of the **available options** | no |
+| -u <br> --url | **URL** of the page containing the input form | yes |
+| -l <br> --level | **Level** to be entered in the form | yes |
+| -l_f <br> --level_field | Name of the **input field for the level** | yes |
+| -p_f <br> --payload_field | Name of the **input field for the payload** | yes |
+| -b <br> --button | Class_Name of the **submit button** | yes |
+| -w <br> --wordlist | Path to the **file** containing XSS payloads | yes |
+| -s <br> --sink | CSS selector of the **element** where the reflection should be checked | no |
+| --headless | Runs the browser in **headless mode** | no |
 
-* Loads the XSS payloads from the specified wordlist.
-* Creates and configures the WebDriver options for Firefox.
-* Tests the XSS payloads one after another:
+* Loads the **XSS payloads** from the specified wordlist.
+* Creates and configures the **WebDriver options** for Firefox.
+* **Tests the XSS payloads** one after another:
   * Starts a new WebDriver instance for each payload.
   * Finds the definedinput fields and the submit button on the page.
   * Injects the respective XSS payload and submits the form.
@@ -56,8 +56,8 @@ The following table shows which functions **XSStrike** supports:
     git clone git@github.com:SarahZimmermann-Schmutzler/XSStrike.git
     ```
 
-2) There are dependencies to install, the other modules are part of the standard library:
-   * Selenium, you can install it across platforms with **Pip**:
+2) There are **dependencies to install**, the other modules are part of the standard library:
+   * **Selenium**, you can install it across platforms with **Pip**:
 
     ```bash
     pip install selenium==4.9.0
@@ -86,7 +86,7 @@ The following table shows which functions **XSStrike** supports:
 
 * Make sure you are in the folder where you cloned **XSStrike** into.  
 
-* Help! What options does the program support!?
+* **Help!** What options does the program support!?
 
     ```bash
     python xsstrike.py -h
@@ -94,7 +94,7 @@ The following table shows which functions **XSStrike** supports:
     python xsstrike.py --help
     ```  
 
-* To run the reflected XSS Tester for interactive forms use the following command in your terminal:
+* To run the reflected XSS Tester for interactive forms use the following **command** in your terminal:
 
     ```bash
     python xsstrike.py -u [URL] \
@@ -106,7 +106,7 @@ The following table shows which functions **XSStrike** supports:
       -w [pathToWordlist]
     ```
 
-  * <ins>Example</ins>: to automatically complete the fourth level of the `Insta XSS Challenges` from the Developer Akademie's XSS VM:
+  * **Example**: to automatically complete the fourth level of the `Insta XSS Challenges` from the Developer Akademie's XSS VM:
 
       ```bash
       python xsstrike.py -u "http://10.0.2.6/index.php" \
@@ -117,7 +117,7 @@ The following table shows which functions **XSStrike** supports:
         -w "payload.txt"
       ```
 
-  * What you see, in the terminal, if the right payload was the third entry in the wordlist:
+  * What you see, in the **terminal**, if the right payload was the third entry in the wordlist:
 
       ```bash
       [*] Loaded 6 payloads.
