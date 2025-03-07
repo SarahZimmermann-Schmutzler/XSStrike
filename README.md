@@ -117,7 +117,7 @@ The following table shows which functions **XSStrike** supports:
         -w "payload.txt"
       ```
 
-  * What you see, in the terminal as **output**, if the right payload was the third entry in the wordlist:
+  * What you see, in the terminal as **output**:
 
       ```bash
       [*] Loaded 6 payloads.
