@@ -35,11 +35,11 @@ The following table shows which functions **XSStrike** supports:
 | -s <br> --sink | CSS selector of the **element** where the reflection should be checked | no |
 | --headless | Runs the browser in **headless mode** | no |
 
-* Loads the **XSS payloads** from the specified wordlist.
+* **Loads the XSS payloads** from the specified wordlist.
 * Creates and configures the **WebDriver options** for Firefox.
 * **Tests the XSS payloads** one after another:
   * Starts a new WebDriver instance for each payload.
-  * Finds the definedinput fields and the submit button on the page.
+  * Finds the defined input fields and the submit button on the page.
   * Injects the respective XSS payload and submits the form.
   * Checks for a JavaScript execution (alert()) to confirm an XSS vulnerability.
   * If --sink is specified, it verifies if the payload appears in the HTML.
