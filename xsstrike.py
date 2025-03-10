@@ -6,9 +6,20 @@ from selenium.common.exceptions import NoAlertPresentException, NoSuchElementExc
 from selenium.webdriver.firefox.service import Service as FirefoxService
 from selenium.webdriver.firefox.options import Options as FirefoxOptions
 
-def get_arguments() -> argparse.Namespace:
+def initiate_argparser() -> argparse.Namespace:
     """
     Parses and retrieves command-line arguments.
+
+    Returns:
+        argparse.Namespace: An object containing the parsed command-line arguments with the following attributes:
+            - url (str): URL of the page containing the input form.
+            - level (str): Level to be entered in the form.
+            - level_field (str): Name of the input field for the level.
+            - payload_field (str): Name of the input field for the payload.
+            - button (str): Class name of the submit button.
+            - sink (str, optional): CSS selector of the element where the reflection should be checked.
+            - wordlist (str): Path to the file containing XSS payloads.
+            - headless (bool): True if the browser should run in headless mode, False otherwise.
     """
     parser = argparse.ArgumentParser(description="XSStrike - Reflected XSS Tester for interactive forms")
     parser.add_argument("-u", "--url", required=True, help="URL of the page containing the input form")
@@ -58,9 +69,9 @@ def find_elements(driver: webdriver.Firefox, level_field: str, payload_field: st
 
     Args:
         driver (webdriver.Firefox): Selenium WebDriver instance.
-        level_field (str): Name or ID of the level input field.
-        payload_field (str): Name or ID of the payload input field.
-        button (str): Name or ID of the submit button.
+        level_field (str): Name of the level input field.
+        payload_field (str): Name of the payload input field.
+        button (str): Class name of the submit button.
 
     Returns:
         tuple: (level_input, payload_input, submit_button) or (None, None, None) if not found.
@@ -75,7 +86,13 @@ def find_elements(driver: webdriver.Firefox, level_field: str, payload_field: st
         return None, None, None
 
 
-def submit_payload(driver: webdriver.Firefox, level_input, payload_input, submit_button, level: str, payload: str):
+def submit_payload(
+    level_input: str, 
+    payload_input: str, 
+    submit_button: str, 
+    level: str, 
+    payload: str
+) -> None:
     """
     Fills in the input fields and submits the form.
 
@@ -135,7 +152,16 @@ def check_sink(driver: webdriver.Firefox, sink: str, payload: str):
         print(f"[-] Sink {sink} not found.")
 
 
-def test_xss(url: str, level: str, level_field: str, payload_field: str, button: str, sink: str | None, driver_options, payloads: list[str]):
+def test_xss(
+    url: str, 
+    level: str, 
+    level_field: str, 
+    payload_field: str, 
+    button: str, 
+    sink: str | None, 
+    driver_options: FirefoxOptions, 
+    payloads: list[str]
+) -> None:
     """
     Tests an interactive web page for reflected XSS vulnerabilities.
 
@@ -180,7 +206,7 @@ def main() -> None:
     """
     Main function to parse arguments and start the XSS test.
     """
-    args = get_arguments()
+    args = initiate_argparser()
     payloads = load_payloads(args.wordlist)  # Load payloads from file
     driver_options = get_driver_options(args.headless)
 
