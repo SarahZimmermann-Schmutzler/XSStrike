@@ -19,7 +19,7 @@ The program was created as part of my training at the Developer Academy and is u
   * **argparse, time**
   * **Selenium** [More Information](https://selenium-python.readthedocs.io/)
     * In Python, it is a library (open-source) that allows developers to automate web applications by writing a script that performs certain actions in a web browser as if it were controlled by a human user.
-    * To use it, a **WebDriver** must be installed for the respective browser, e.g.:
+    * To use it, a **WebDriver** must be installed for the respective browser, in this case:
       * **GeckoDriver for Firefox browser** v0.35.0 [More Information](https://github.com/mozilla/geckodriver)
 
 ## Getting Started
@@ -46,13 +46,13 @@ The program was created as part of my training at the Developer Academy and is u
       env\Scripts\activate #Windows
       ```
 
-   * **Install the dependencies** from [requirements.txt](./requirements.txt):
+   * Install the **dependencies** from [requirements.txt](./requirements.txt):
 
       ```bash
       pip install -r requirements.txt
       ```
 
-1. Install the WebDriver for Selenium, in this case **GeckoDriver** for the Firefox browser:
+1. Install the **GeckoDriver** for the Firefox browser:
      * [Download v0.35.0 from GitHub](https://github.com/mozilla/geckodriver/releases) and follow the instrcutions given there.
 
 ## Usage
@@ -61,7 +61,7 @@ The program was created as part of my training at the Developer Academy and is u
 
 ### Program Options
 
-* To see **all availabe program options** have a look in the `help-section`:
+* To see all available **program options** have a look in the `help-section`:
 
     ```bash
     python xsstrike.py -h
@@ -106,7 +106,7 @@ The program was created as part of my training at the Developer Academy and is u
     -w "payload.txt"
   ```
 
-* The above command will yield the following **output**:
+* It will yield the following **output**:
 
   ```bash
   [*] Loaded 6 payloads.
