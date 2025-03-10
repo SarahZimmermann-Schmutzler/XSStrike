@@ -10,7 +10,7 @@ The program was created as part of my training at the Developer Academy and is u
 1. [Getting Started](#getting-started)
 1. [Usage](#usage)
    * [Program Options](#program-options)
-   * [Program FLow](#program-flow)
+   * [Program Flow](#program-flow)
    * [Example Run](#example-run)
 
 ## Technologies
